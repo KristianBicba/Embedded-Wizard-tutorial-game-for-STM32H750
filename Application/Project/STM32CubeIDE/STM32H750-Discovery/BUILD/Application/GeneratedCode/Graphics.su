@@ -1,0 +1,15 @@
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:61:6:GraphicsCanvas__Init	8	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:77:6:GraphicsCanvas__ReInit	0	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:113:6:GraphicsCanvas_OnSetFrameSize	24	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:142:6:GraphicsCanvas_Update	168	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:84:6:GraphicsCanvas__Done	0	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:97:6:GraphicsCanvas_Done	0	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:104:6:GraphicsCanvas_Init	0	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:187:16:GraphicsCanvas_DetachBitmap	8	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:205:16:GraphicsCanvas__DetachBitmap	8	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:214:16:GraphicsCanvas_AttachBitmap	16	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:250:16:GraphicsCanvas__AttachBitmap	16	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:277:6:GraphicsCanvas_DrawText	72	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:337:6:GraphicsCanvas_ScaleBitmap	88	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:394:6:GraphicsCanvas_CopyBitmap	88	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Graphics.c:430:6:GraphicsCanvas_FillRectangle	72	static

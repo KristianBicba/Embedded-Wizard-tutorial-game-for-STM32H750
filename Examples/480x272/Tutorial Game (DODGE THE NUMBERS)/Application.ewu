@@ -1,0 +1,464 @@
+﻿$version 12.05
+
+// This is the root component of the entire GUI application.
+$rect <20,20,220,60>
+$output false
+class Application : Core::Root
+{
+  $rect <0,300,200,340>
+  inherited property Bounds = <0,0,480,272>;
+
+  // This is a generic touch handler.
+  $rect <20,20,160,60>
+  object Core::SimpleTouchHandler SimpleTouchHandler
+  {
+    preset Point4 = <0,0>;
+    preset Point3 = <480,0>;
+    preset Point2 = <480,272>;
+    preset Point1 = <0,272>;
+    preset OnDrag = OnTouch;
+    preset OnEnter = OnClick;
+    preset OnPress = OnTouch;
+  }
+
+  // This is a filled rectangle view.
+  $rect <20,20,160,60>
+  object Views::Rectangle Rectangle
+  {
+    preset Bounds = <0,0,480,272>;
+    preset Color = #FFFFFFFF;
+  }
+
+  // This is an image view.
+  $rect <20,20,160,60>
+  object Views::Image Slika
+  {
+    preset Bounds = <381,0,480,95>;
+    preset AutoSize = true;
+    preset Bitmap = Application::Logo;
+  }
+
+  // This is a slot method connected with the touch handler. Each time the user touches \
+  // on the screen, this method is called. As a result, the position of the logo \
+  // image will be changed.
+  $rect <610,300,810,340>
+  slot OnTouch
+  {
+    Slika.Bounds.origin = SimpleTouchHandler.CurrentPos - point (Slika.Bounds.h/2,Slika.Bounds.w/2);
+
+  }
+
+  $rect <820,300,1020,340>
+  $output STM32
+  slot ButtonBlue
+  {
+    if (start){
+      var   int32  i = 0;
+      for( ; i < Ocene.size; i = i + 1 ){
+        
+        var Views::Image Ocena = Ocene[i];
+
+        if( !Ocena.Visible ){ continue; }
+        
+        if((Slika.Bounds.x > Ocena.Bounds.x + Ocena.Bounds.w) || (Slika.Bounds.x + Slika.Bounds.w < Ocena.Bounds.x) || 
+        (Ocena.Bounds.y > Slika.Bounds.y + Slika.Bounds.h) || (Ocena.Bounds.y + Ocena.Bounds.h < Slika.Bounds.y)){
+        }else{
+          Slika.Visible = false;
+          Ocena.Visible = false;
+          OverText.Visible = true;
+          stop = true;
+          Level.String = "LETNIK 1.";
+          SpawnTimer.Enabled = false;
+
+        }
+        Ocena.Bounds.origin += point(SpeedsX[i], SpeedsY[i]);
+        //DESNO
+        if (Ocena.Bounds.x >= 480 - Ocena.Bounds.w){
+          SpeedsX[i] = -SpeedsX[i];
+        } 
+       //LEVO
+        if (Ocena.Bounds.x <= 0){
+          SpeedsX[i] = -SpeedsX[i];
+        }   
+        //GOR
+        if (Ocena.Bounds.y >= 272 - Ocena.Bounds.h){
+          SpeedsY[i] = -SpeedsY[i];
+        }
+        //DOL
+        if (Ocena.Bounds.y <= 0){
+          SpeedsY[i] = -SpeedsY[i];
+        }
+        
+        
+      }
+    }
+
+      
+
+  }
+
+  $rect <0,350,200,390>
+  object Graphics::Canvas Canvas
+  {
+    preset FrameSize = <100,100>;
+  }
+
+  $rect <860,10,1060,50>
+  var int32 speed_x = 3;
+
+  $rect <860,60,1060,100>
+  var int32 speed_y = 3;
+
+  // This is a slot method connected with the touch handler. Each time the user touches \
+  // on the screen, this method is called. As a result, the position of the logo \
+  // image will be changed.
+  $rect <600,350,800,390>
+  slot OnClick
+  {
+    speed_x = 3;
+    speed_x1 = 3;
+    speed_x2 = 3;
+    speed_x3 = 3;
+
+    if (!start){
+      SpawnTimer.Enabled = true;
+      start = true;
+      stop = false;
+      StartText.Visible = false;
+
+      
+    }
+    if(stop){
+      Time = 0;
+      SpawnTimer.Enabled = true;
+
+      stop = false;
+      OverText.Visible = false;
+      win.Visible = false;
+      Slika.Bounds = <381,0,480,95>;
+      Ocena0.Bounds = <53,214,89,246>;
+      Ocena1.Bounds = <53,214,89,246>;
+      Slika.Visible = true;
+      Ocena0.Visible = true;
+      var int32 i = 1;
+      for(; i < 3; i += 1){
+        Ocene[i].Visible = false;
+        Ocene[i].Bounds.origin =  <294,367>;
+
+      }
+
+    }
+  }
+
+  $rect <0,400,200,440>
+  object Core::Timer Timer
+  {
+    preset OnTrigger = ButtonBlue;
+    preset Period = 20;
+    preset Enabled = true;
+  }
+
+  $rect <20,20,160,60>
+  object Views::Image Ocena0
+  {
+    preset Bounds = <26,222,62,254>;
+    preset Bitmap = Application::Ocena;
+  }
+
+  $rect <650,-60,850,-20>
+  var bool start;
+
+  $rect <20,20,160,60>
+  object Views::Text StartText
+  {
+    preset Bounds = <62,76,419,130>;
+    preset String = "PRESS TO START";
+    preset Font = Resources::FontExtraLarge;
+    preset Color = #000000FF;
+  }
+
+  $rect <20,20,160,60>
+  object Views::Text OverText
+  {
+    preset Bounds = <62,103,419,157>;
+    preset String = "PRESS TO RETRY";
+    preset Font = Resources::FontExtraLarge;
+    preset Color = #000000FF;
+    preset Visible = false;
+  }
+
+  $rect <650,-10,850,30>
+  var bool stop;
+
+  $rect <20,20,160,60>
+  object Views::Image Ocena1
+  {
+    preset Bounds = <319,298,355,330>;
+    preset Bitmap = Application::Ocena;
+    preset Visible = false;
+  }
+
+  $rect <20,20,160,60>
+  object Views::Image Ocena2
+  {
+    preset Bounds = <258,298,294,330>;
+    preset Bitmap = Application::Ocena;
+    preset Visible = false;
+  }
+
+  $rect <20,20,160,60>
+  object Views::Image Ocena3
+  {
+    preset Bounds = <383,298,419,330>;
+    preset Bitmap = Application::Ocena;
+    preset Visible = false;
+  }
+
+  $rect <20,20,160,60>
+  object Views::Text Level
+  {
+    preset Bounds = <15,13,94,27>;
+    preset String = "LETNIK: 1.";
+    preset Font = Resources::DefaultFont;
+    preset Color = #000000FF;
+  }
+
+  $rect <600,240,800,280>
+  array Views::Image Ocene[ 4 ] =
+  (
+    Default[0] = Ocena0;
+    Default[1] = Ocena1;
+    Default[2] = Ocena2;
+    Default[3] = Ocena3;
+  );
+
+  $rect <860,10,1060,50>
+  var int32 speed_x1 = 3;
+
+  $rect <860,10,1060,50>
+  var int32 speed_x2 = 3;
+
+  $rect <860,10,1060,50>
+  var int32 speed_x3 = 3;
+
+  $rect <600,140,800,180>
+  array int32 SpeedsX[ 4 ] =
+  (
+    Default[0] = speed_x;
+    Default[1] = speed_x1;
+    Default[2] = speed_x2;
+    Default[3] = speed_x3;
+  );
+
+  $rect <860,60,1060,100>
+  var int32 speed_y1 = 3;
+
+  $rect <860,60,1060,100>
+  var int32 speed_y2 = 3;
+
+  $rect <860,60,1060,100>
+  var int32 speed_y3 = 3;
+
+  $rect <600,190,800,230>
+  array int32 SpeedsY[ 4 ] =
+  (
+    Default[0] = speed_y;
+    Default[1] = speed_y1;
+    Default[2] = speed_y2;
+    Default[3] = speed_y3;
+  );
+
+  $rect <810,351,1010,391>
+  slot Spawn
+  {
+    Time += 1;
+    trace Time;
+    if (Time % 10 == 0) {
+       var int32 i = Time/10;
+       Level.String = "LETNIK " + (string)( ( Time / 10 )+ 1 ) + ".";
+       var point one =  <94,67>;
+       var point two =  <410,222>;
+       var point three = <62,222>;
+       var point four = <401,76>;
+       var point res = one;
+       var point origin = Slika.Bounds.origin;
+
+       var float distance = math_sqrt(math_pow(origin.x - one.x,2)+math_pow(origin.y - one.y,2));
+
+       if ( distance < math_sqrt(math_pow(origin.x - two.x,2)+math_pow(origin.y - two.y,2 ))){
+
+          distance = math_sqrt(math_pow(origin.x - two.x,2)+math_pow(origin.y - two.y,2 ));
+          res = two;
+
+       }else if( distance < math_sqrt(math_pow(origin.x - three.x,2)+math_pow(origin.y - three.y,2 ))){
+
+          distance = math_sqrt(math_pow(origin.x - three.x,2)+math_pow(origin.y - three.y,2 ));
+          res = three;
+
+       }else if( distance < math_sqrt(math_pow(origin.x - four.x,2)+math_pow(origin.y - four.y,2 ))){
+
+          distance = math_sqrt(math_pow(origin.x - four.x,2)+math_pow(origin.y - four.y,2 ));
+          res = four;
+       }
+       if( i == 4){
+        var int32 j = 0;
+        for( ; j < Ocene.size; j = j + 1 ){
+          Ocene[j].Visible = false;      
+        }
+          Slika.Visible = false;
+          win.Visible = true;
+          stop = true;
+          Level.String = "LETNIK 1.";
+          SpawnTimer.Enabled = false;
+          i = 0;
+
+       }else{
+       Ocene[i].Visible = true;
+       Ocene[i].Bounds.origin = res;
+       }
+    }
+  }
+
+  $rect <0,460,200,500>
+  object Core::Timer SpawnTimer
+  {
+    preset OnTrigger = Spawn;
+    preset Enabled = false;
+  }
+
+  $rect <650,50,850,90>
+  var int32 Time = 0;
+
+  $rect <20,20,160,60>
+  object Views::Text win
+  {
+    preset Bounds = <62,130,419,184>;
+    preset String = "YOU WIN";
+    preset Font = Resources::FontExtraLarge;
+    preset Color = #000000FF;
+    preset Visible = false;
+  }
+
+  // Directives to adapt the order of the above members according to how these members 
+  // where arranged when the project content was stored. In this manner the storage 
+  // and the expected order of the members don't depend. Merging of changes in the 
+  // project files is simplified.
+  $member Bounds
+  $member SimpleTouchHandler
+  $member Rectangle
+  $member Slika
+  $member OnTouch
+  $member ButtonBlue
+  $member Canvas
+  $member OnClick
+  $member Timer
+  $member start
+  $member StartText
+  $member OverText
+  $member stop
+  $member Ocena0
+  $member Ocena1
+  $member Ocena2
+  $member Ocena3
+  $member Level
+  $member Ocene
+  $member speed_x1
+  $member speed_x2
+  $member speed_x3
+  $member speed_x
+  $member SpeedsX
+  $member speed_y1
+  $member speed_y2
+  $member speed_y3
+  $member speed_y
+  $member SpeedsY
+  $member Spawn
+  $member SpawnTimer
+  $member Time
+  $member win
+}
+
+// Font resource for large font - used for the caption text items.
+$rect <230,20,430,60>
+$output false
+resource Resources::Font FontLarge
+{
+  attr fontname FontName = Arial;
+  attr fontheight Height = 32;
+  attr fontquality Quality = High;
+  attr fontranges Ranges = 0x20-0xFF;
+  attr fontaspectratio AspectRatio = 1.0;
+  attr fontbold Bold = false;
+  attr fontitalic Italic = false;
+  attr fontkerning Kerning = true;
+  attr fontheightmode HeightMode = Compatible;
+  attr fontrowdistance RowDistance;
+}
+
+// Bitmap resource for the Embedded Wizard logo.
+$rect <430,20,630,60>
+$output false
+resource Resources::Bitmap Logo
+{
+  attr bitmapfile FileName = .\Res\EmWiLogoS.png;
+  attr framesize FrameSize;
+  attr framedelay FrameDelay;
+  attr bitmapformat Format = Native;
+  attr bitmapdithering Dithering = Auto;
+  attr bitmapmode Mode = Default;
+}
+
+// Font resource for small font - used for the description text items.
+$rect <230,60,430,100>
+$output false
+resource Resources::Font FontSmall
+{
+  attr fontname FontName = Arial;
+  attr fontheight Height = 20;
+  attr fontquality Quality = High;
+  attr fontranges Ranges = 0x20-0xFF;
+  attr fontaspectratio AspectRatio = 1.0;
+  attr fontbold Bold = false;
+  attr fontitalic Italic = false;
+  attr fontkerning Kerning = true;
+  attr fontheightmode HeightMode = Compatible;
+  attr fontrowdistance RowDistance;
+}
+
+$rect <20,80,220,120>
+$output false
+class REDBUTTON : Core::Group
+{
+  $rect <10,230,210,270>
+  inherited property Bounds = <0,0,150,50>;
+
+  $rect <20,20,160,60>
+  object WidgetSet::PushButton PushButton
+  {
+    preset Bounds = <0,0,150,50>;
+    preset Opacity = 200;
+    preset OnActivate = OnPushButton;
+    preset Label = "RED";
+    preset Appearance = WidgetSet::PushButton_Medium;
+  }
+
+  $rect <38,148,238,188>
+  $output STM32
+  slot OnPushButton
+  {
+    trace "WORKS";
+  }
+}
+
+// Bitmap resource for the Embedded Wizard logo.
+$rect <410,110,610,150>
+$output false
+resource Resources::Bitmap Ocena
+{
+  attr bitmapfile FileName = .\Res\5S.png;
+  attr framesize FrameSize;
+  attr framedelay FrameDelay;
+  attr bitmapformat Format = Native;
+  attr bitmapdithering Dithering = Auto;
+  attr bitmapmode Mode = Default;
+}

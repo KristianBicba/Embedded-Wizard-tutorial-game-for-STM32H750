@@ -1,0 +1,17 @@
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:1018:13:GfxSelectSurfaces	12	static,ignoring_inline_asm
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:166:5:GfxInitGfx	0	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:210:15:GfxInitViewport	40	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:352:6:GfxDoneViewport	8	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:402:15:GfxBeginUpdate	8	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:460:15:GfxBeginUpdateArea	8	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:551:6:GfxEndUpdate	32	static,ignoring_inline_asm
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:622:15:GfxCreateSurface	56	static,ignoring_inline_asm
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:724:15:GfxCreateConstSurface	32	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:798:6:GfxDestroySurface	8	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:879:15:GfxLockSurface	24	static,ignoring_inline_asm
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:979:6:GfxUnlockSurface	0	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:1090:6:GfxFillDriver	192	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:1197:6:GfxCopyDriver	240	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:1355:6:GfxBlendDriver	240	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:1495:6:GfxUseGraphicsAccelerator	0	static
+C:/STM32/STM32H750-Discovery/PlatformPackage/RGB565/ewextgfx.c:1535:5:GfxIsGraphicsAcceleratorUsed	0	static

@@ -1,0 +1,14 @@
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:62:13:EwBspOsGetName	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:84:6:EwBspOsSystickHandler	8	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:115:15:EwBspOsGetTicks	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:144:6:EwBspOsDelay	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:178:15:EwBspOsThreadCreate	32	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:210:6:EwBspOsThreadDestroy	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:230:15:EwBspOsThreadGetHandle	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:255:6:EwBspOsSignalWait	24	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:278:6:EwBspOsSignalSet	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:300:18:EwBspOsSemaphoreCreate	16	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:324:5:EwBspOsSemaphoreWait	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:344:6:EwBspOsSemaphoreRelease	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:365:6:EwBspOsSemaphoreDestroy	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_os.c:385:6:EwBspOsStartScheduler	0	static

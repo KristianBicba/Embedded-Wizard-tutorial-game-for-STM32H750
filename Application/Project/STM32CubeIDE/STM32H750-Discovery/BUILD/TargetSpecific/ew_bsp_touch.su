@@ -1,0 +1,3 @@
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_touch.c:105:5:EwBspTouchInit	48	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_touch.c:184:6:EwBspTouchDone	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_touch.c:209:5:EwBspTouchGetEvents	192	static

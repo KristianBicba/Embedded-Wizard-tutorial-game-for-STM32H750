@@ -1,0 +1,10 @@
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:84:6:HAL_LTDC_MspInit	72	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:154:6:HAL_LTDC_MspDeInit	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:164:6:LTDC_IRQHandler	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:170:6:HAL_LTDC_LineEventCallback	8	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:267:5:EwBspDisplayInit	16	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:421:6:EwBspDisplayDone	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:455:5:EwBspDisplayGetUpdateArea	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:524:6:EwBspDisplayWaitForCompletion	16	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:580:6:EwBspDisplayCommitBuffer	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_display.c:608:6:EwBspDisplaySetClut	8	static

@@ -1,0 +1,4 @@
+C:/STM32/STM32H750-Discovery/Application/Source/ewmain.c:136:5:EwInit	72	static
+C:/STM32/STM32H750-Discovery/Application/Source/ewmain.c:219:6:EwDone	16	static
+C:/STM32/STM32H750-Discovery/Application/Source/ewmain.c:286:5:EwProcess	96	static
+C:/STM32/STM32H750-Discovery/Application/Source/ewmain.c:504:6:EwPrintSystemInfo	16	static

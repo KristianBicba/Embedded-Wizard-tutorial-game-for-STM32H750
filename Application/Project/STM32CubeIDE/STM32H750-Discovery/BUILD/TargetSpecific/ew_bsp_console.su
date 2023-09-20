@@ -1,0 +1,6 @@
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_console.c:62:6:HAL_UART_MspInit	40	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_console.c:92:6:HAL_UART_MspDeInit	8	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_console.c:129:6:EwBspConsoleInit	4	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_console.c:158:6:EwBspConsoleDone	0	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_console.c:178:6:EwBspConsolePutCharacter	16	static
+C:/STM32/STM32H750-Discovery/TargetSpecific/ew_bsp_console.c:200:15:EwBspConsoleGetCharacter	16	static

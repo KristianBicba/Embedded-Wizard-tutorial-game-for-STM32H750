@@ -1,0 +1,5 @@
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Effects.c:32:6:EffectsEffectTimerClass__Init	8	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Effects.c:45:6:EffectsEffectTimerClass__ReInit	0	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Effects.c:52:6:EffectsEffectTimerClass__Done	0	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Effects.c:65:6:EffectsEffectTimerClass_Trigger	8	static
+C:/STM32/STM32H750-Discovery/Application/GeneratedCode/Effects.c:88:6:EffectsEffectTimer__Init	8	static

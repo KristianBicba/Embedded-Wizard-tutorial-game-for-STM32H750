@@ -1,0 +1,9 @@
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:238:9:BSP_I2C4_DeInit	8	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:266:26:MX_I2C4_Init	8	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:187:9:BSP_I2C4_Init	128	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:312:9:BSP_I2C4_WriteReg	32	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:349:9:BSP_I2C4_ReadReg	32	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:386:9:BSP_I2C4_WriteReg16	32	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:423:9:BSP_I2C4_ReadReg16	32	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:459:9:BSP_I2C4_IsReady	8	static
+C:/STM32/STM32H750-Discovery/ThirdParty/STM32Cube_FW_H7/Drivers/BSP/STM32H750B-DK/stm32h750b_discovery_bus.c:481:9:BSP_GetTick	0	static
